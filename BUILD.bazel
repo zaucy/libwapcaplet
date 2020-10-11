@@ -1,0 +1,10 @@
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+cc_library(
+    name = "libwapcaplet",
+    visibility = ["//visibility:public"],
+    strip_include_prefix = "include",
+    includes = ["include"],
+    hdrs = glob(["include/libwapcaplet/**/*.h"]),
+    srcs = glob(["src/**/*.c", "include/libwapcaplet/**/*.h"]),
+)
